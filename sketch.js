@@ -2,7 +2,7 @@ let ball = [];
 let ball_amount = 25;    // 공의 수량
 
 function setup() {
-  createCanvas(1920, 1080);
+  createCanvas(displayWidth, displayHeight);
   textSize(18);
   textAlign(CENTER, CENTER);
   strokeWeight(5);
