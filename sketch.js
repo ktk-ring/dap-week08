@@ -1,7 +1,7 @@
 let ballA, ballB, ballC;
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(displayWidth, displayHeight);
   textSize(18);
   textAlign(CENTER, CENTER);
   strokeWeight(5);
