@@ -2,7 +2,7 @@ let ball = [];
 let ball_amount = 15;
 
 function setup() {
-  createCanvas(displayWidth, displayHeight);
+  createCanvas(1920, 1080);
   textSize(18);
   textAlign(CENTER, CENTER);
   strokeWeight(5);
