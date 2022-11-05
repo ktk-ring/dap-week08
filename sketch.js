@@ -1,28 +1,28 @@
 let ball = [];
-let ball_amount = 15;
+let ball_amount = 25;    // 공의 수량
 
 function setup() {
-  createCanvas(1920, 1080);
+  createCanvas(displayWidth, displayHeight);
   textSize(18);
   textAlign(CENTER, CENTER);
   strokeWeight(5);
 
   for (let i = 0; i < ball_amount; i++) {
-    ball[i] = new Particle(random(width), random(height));
+    ball[i] = new Particle();
   }
 }
 
 function draw() {
   background(225, 35);
 
+  let wind = createVector((mouseX-width/2) / 5000, (mouseY-height/2) / 5000);
+  let center = createVector(width/2, height/2);
+  let arrow = createVector(mouseX-width/2, mouseY-height/2);
+  arrow.div(2);
+  
   fill('blue');
   drawArrow(center, arrow.limit(100), 'blue');
   text("바람의 방향", width/2, height/2+18);
-  
-  let wind = createVector((mouseX-width/2) / 5000, (mouseY-height/2) / 5000);
-  let center = createVector(width/2, height/2)
-  let arrow = createVector(mouseX-width/2, mouseY-height/2);
-  arrow.div(2);
   
   for (let i = 0; i < ball_amount; i++) {
     ball[i].addForce(wind);

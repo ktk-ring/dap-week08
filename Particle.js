@@ -1,6 +1,6 @@
 class Particle {
   constructor(x, y) {
-    this.pos = createVector(x, y);
+    this.pos = createVector(random(width), random(height));
     this.vel = createVector(random(-5, 5), random(-5, 5));
     this.acc = createVector(0, 0);
 
@@ -17,6 +17,8 @@ class Particle {
     this.vel.add(this.acc);
     this.pos.add(this.vel);
     this.acc.set(0, 0);
+    
+    this.vel.limit(25);
   }
 
   checkEdge() {
